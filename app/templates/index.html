@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="like_group">
+        <form method="post" action="/group">
+            <label>
+                Group ID:
+                <input type="text" name="group_id">
+            </label>
+            <label>
+                Count:
+                <input type="text" name="count">
+            </label>
+            <input type="submit" value="submit">
+        </form>
+        {% if groups %}
+            {% for group in groups %}
+                <div class="group">
+                    <span>Group ID: <code>{{ group.item_id }}</code></span>
+                    <div class="likes">
+                        {% for like in group.likes.all() %}
+                            <span>Item ID: <code>{{ like.item_id }}</code></span>
+                            <br>
+                        {% endfor %}
+                    </div>
+                    <a href="/deletegroup/{{ group.id }}">delete</a>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="unlike">
+        <form method="post" action="/ungroup">
+            <label>
+                Group ID:
+                <input type="text" name="group_id">
+            </label>
+            <label>
+                Count:
+                <input type="text" name="count">
+            </label>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+
+{% endblock %}
