@@ -1,32 +1,24 @@
-.likes {
+.card {
     margin: 10px;
     background-color: #fafafa;
     border: solid #d4d4d4 1px;
     box-shadow: 0 2px 2px #919191;
-    width: 155px;
     padding: 5px 10px;
     border-radius: 5px;
+}
+
+.likes {
+    width: 155px;
 }
 
 .group {
     text-align: center;
-    margin: 10px;
-    background-color: #fafafa;
-    border: solid #d4d4d4 1px;
-    box-shadow: 0 2px 2px #919191;
     width: 200px;
-    padding: 5px 10px;
-    border-radius: 5px;
 }
 
-.like_group, .unlike {
+.like_group,
+.unlike {
     float: left;
-    margin: 10px;
-    background-color: #fafafa;
-    border: solid #d4d4d4 1px;
-    box-shadow: 0 2px 2px #919191;
     width: 575px;
-    padding: 5px 10px;
-    border-radius: 5px;
     display: inline-block;
 }
